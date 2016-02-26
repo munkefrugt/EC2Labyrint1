@@ -25,19 +25,21 @@ public class Labyrinth
     ArrayList<ArrayList<String>> rowsMakingAMaze = new ArrayList<ArrayList<String>>();
 
     // generate a random row
-    ArrayList<String> RowOfRandomStrings = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings = new ArrayList<String>();
 
 
 
     Labyrinth()
     {
-
+        int intilizeRandInt = (int)(Math.random() *2 );
+        System.out.println("intilizeRandInt : "+ intilizeRandInt);
+        
         generateARandomRow();
 
+        // adds each random row to the 2d array
         for (int i = 0; i <16 ; i++)
         {
-
-        rowsMakingAMaze.add(RowOfRandomStrings);
+        rowsMakingAMaze.add(rowOfRandomStrings);
         }
 
 
@@ -46,21 +48,52 @@ public class Labyrinth
 
     }
 
-    // fills the arrayList "RowOfRandomStrings" with 24 String elements "@" or " " (blank)
+    // fills the arrayList "rowOfRandomStrings" with 24 String elements "@" or " " (blank)
     private void generateARandomRow()
     {
+        makeRandomElement();
+        System.out.println("makeRandomElement() = " + makeRandomElement());
+
         for (int i = 0; i < 24; i++)
         {
 
-        RowOfRandomStrings.add("@"); // fix it
+        rowOfRandomStrings.add(makeRandomElement()); // fix it each
         }
+    }
+
+    private String makeRandomElement()
+
+    {
+        // make 2 possibilities 1 or 0
+        int randomInt = (int)(Math.random() *2 ); // "Math.random()"  is normaly doubles, so it makes is casting it to int "(int)"
+
+        if (randomInt == 0)
+        {
+
+            //System.out.println("0 = blank");
+            return " ";
+        }
+        else if (randomInt == 1)
+        {
+            //System.out.println("1 = @");
+            return "@";
+        }
+
+        else
+        {
+            System.out.println("error");
+            return "error";
+        }
+
+       // System.out.println("randomInt:  " + randomInt);
+
     }
 
     // prints the maze
     public void printMaze()
     {
 
-        System.out.println("print RowOfRandomStrings: ");
+        System.out.println("print rowOfRandomStrings: ");
 /*
         for (int i = 0; i < 24 ; i++)
         {
@@ -71,7 +104,7 @@ public class Labyrinth
         for (int j = 0; j < 16 ; j++)
         {
 
-            System.out.print(RowOfRandomStrings.get(j));
+            System.out.print(rowOfRandomStrings.get(j));
         }
 
         //printing the maze:
