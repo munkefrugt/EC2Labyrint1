@@ -20,13 +20,31 @@ public class Labyrinth
 
      */
 
-    // generate arraylist 2 hold the 2d array
+    // generate 1 main arraylist to hold the all the 16 rows in the 2d array
 
     ArrayList<ArrayList<String>> rowsMakingAMaze = new ArrayList<ArrayList<String>>();
 
-    // generate a random row
+
+
+
+    // Now generate the randoms row
     ArrayList<String> rowOfRandomStrings = new ArrayList<String>();
     ArrayList<String> rowOfRandomStrings1 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings2 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings3 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings4 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings5 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings6 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings7 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings8 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings9 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings10 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings11 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings12 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings13 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings14 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings15 = new ArrayList<String>();
+    ArrayList<String> rowOfRandomStrings16 = new ArrayList<String>();
 
 
     Labyrinth()
@@ -36,24 +54,50 @@ public class Labyrinth
         
 
 
-        // adds each random row to the 2d array
 
         // beware of the <= remember the 24 th element is number 23.
-        for (int i = 0; i <= 24 ; i++) {
+        // Create all the random rows
 
-        rowOfRandomStrings.add(makeRandomElement());
-        }
-       
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings1.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings2.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings3.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings4.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings5.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings6.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings7.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings8.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings9.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings10.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings11.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings12.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings13.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings14.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings15.add(makeRandomElement());}
+        for (int i = 0; i <= 24 ; i++) {rowOfRandomStrings16.add(makeRandomElement());}
 
 
-        for (int i = 0; i <= 24 ; i++) {
+        // add each random row to the 2d array
 
-            rowOfRandomStrings1.add(makeRandomElement());
-        }
-        //makeRandomElement()
-
+        // add the random rows to the main arraylist. holding 16 places
         rowsMakingAMaze.add(rowOfRandomStrings);
         rowsMakingAMaze.add(rowOfRandomStrings1);
+        rowsMakingAMaze.add(rowOfRandomStrings2);
+        rowsMakingAMaze.add(rowOfRandomStrings3);
+        rowsMakingAMaze.add(rowOfRandomStrings4);
+        rowsMakingAMaze.add(rowOfRandomStrings5);
+        rowsMakingAMaze.add(rowOfRandomStrings6);
+        rowsMakingAMaze.add(rowOfRandomStrings7);
+        rowsMakingAMaze.add(rowOfRandomStrings8);
+        rowsMakingAMaze.add(rowOfRandomStrings9);
+        rowsMakingAMaze.add(rowOfRandomStrings10);
+        rowsMakingAMaze.add(rowOfRandomStrings11);
+        rowsMakingAMaze.add(rowOfRandomStrings12);
+        rowsMakingAMaze.add(rowOfRandomStrings13);
+        rowsMakingAMaze.add(rowOfRandomStrings14);
+        rowsMakingAMaze.add(rowOfRandomStrings15);
+        rowsMakingAMaze.add(rowOfRandomStrings16);
+
 
 
 
@@ -61,21 +105,8 @@ public class Labyrinth
         System.out.println("generate Labyrinth");
         System.out.println("prints 2 lines");
 
-        // prints 24 width, and 2 rows
-        for (int j = 0; j <2 ; j++)
-        {
 
-            for (int i = 0; i <24 ; i++)
-            {
 
-            System.out.print(rowsMakingAMaze.get(j).get(i));
-
-            }
-            System.out.println();
-        }
-        // dette virker, nu er der kun en plads i arrayet RandomRowOfString
-        System.out.println(rowsMakingAMaze.get(0).get(24));
-        System.out.println(rowsMakingAMaze.get(1).get(0));
 
 
     }
@@ -115,31 +146,18 @@ public class Labyrinth
     {
 
         System.out.println("print rowOfRandomStrings: ");
-/*
-        for (int i = 0; i < 24 ; i++)
+        // prints 24 width, and 2 rows
+        for (int j = 0; j <16 ; j++)
         {
 
-        }*/
-        //System.out.println(mazeList.get(1).get(1));
-
-
-
-        //printing the maze:
-
-        // outer loop is the rows
-        System.out.println("#################################");
-        /*for (int i = 0; i < 16; i++)
-        {
-            System.out.println();
-
-            // take each element i is the row j is the indexin the 2. array or coloumn nb
-            for (int j = 0; j < 24 ; j++)
+            for (int i = 0; i <24 ; i++)
             {
 
-                System.out.print(rowsMakingAMaze.get(i).get(j));
-            }
+                System.out.print(rowsMakingAMaze.get(j).get(i));
 
-        }*/
+            }
+            System.out.println();
+        }
         System.out.println();
         System.out.println("#################################");
     }
