@@ -26,7 +26,7 @@ public class Labyrinth
 
     // generate a random row
     ArrayList<String> rowOfRandomStrings = new ArrayList<String>();
-
+    ArrayList<String> rowOfRandomStrings1 = new ArrayList<String>();
 
 
     Labyrinth()
@@ -34,32 +34,53 @@ public class Labyrinth
         int intilizeRandInt = (int)(Math.random() *2 );
         System.out.println("intilizeRandInt : "+ intilizeRandInt);
         
-        generateARandomRow();
+
 
         // adds each random row to the 2d array
-        for (int i = 0; i <16 ; i++)
-        {
-        rowsMakingAMaze.add(rowOfRandomStrings);
+
+        // beware of the <= remember the 24 th element is number 23.
+        for (int i = 0; i <= 24 ; i++) {
+
+        rowOfRandomStrings.add(makeRandomElement());
         }
+       
+
+
+        for (int i = 0; i <= 24 ; i++) {
+
+            rowOfRandomStrings1.add(makeRandomElement());
+        }
+        //makeRandomElement()
+
+        rowsMakingAMaze.add(rowOfRandomStrings);
+        rowsMakingAMaze.add(rowOfRandomStrings1);
+
+
 
 
         System.out.println("generate Labyrinth");
+        System.out.println("prints 2 lines");
 
-
-    }
-
-    // fills the arrayList "rowOfRandomStrings" with 24 String elements "@" or " " (blank)
-    private void generateARandomRow()
-    {
-        makeRandomElement();
-        System.out.println("makeRandomElement() = " + makeRandomElement());
-
-        for (int i = 0; i < 24; i++)
+        // prints 24 width, and 2 rows
+        for (int j = 0; j <2 ; j++)
         {
 
-        rowOfRandomStrings.add(makeRandomElement()); // fix it each
+            for (int i = 0; i <24 ; i++)
+            {
+
+            System.out.print(rowsMakingAMaze.get(j).get(i));
+
+            }
+            System.out.println();
         }
+        // dette virker, nu er der kun en plads i arrayet RandomRowOfString
+        System.out.println(rowsMakingAMaze.get(0).get(24));
+        System.out.println(rowsMakingAMaze.get(1).get(0));
+
+
     }
+
+
 
     private String makeRandomElement()
 
@@ -101,17 +122,13 @@ public class Labyrinth
         }*/
         //System.out.println(mazeList.get(1).get(1));
 
-        for (int j = 0; j < 16 ; j++)
-        {
 
-            System.out.print(rowOfRandomStrings.get(j));
-        }
 
         //printing the maze:
 
         // outer loop is the rows
         System.out.println("#################################");
-        for (int i = 0; i < 16; i++)
+        /*for (int i = 0; i < 16; i++)
         {
             System.out.println();
 
@@ -122,7 +139,7 @@ public class Labyrinth
                 System.out.print(rowsMakingAMaze.get(i).get(j));
             }
 
-        }
+        }*/
         System.out.println();
         System.out.println("#################################");
     }
