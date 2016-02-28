@@ -161,4 +161,12 @@ public class Labyrinth
         System.out.println();
         System.out.println("#################################");
     }
+
+    /*@Override
+    public String toString()
+    {
+
+            return
+
+    }*/
 }
