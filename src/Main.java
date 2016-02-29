@@ -8,7 +8,7 @@ public class Main
 
         Labyrinth labyrinth = new Labyrinth();
 
-        labyrinth.printMaze();
+        labyrinth.toString();
         // returns the maze printed
         System.out.println(labyrinth.toString());
 
