@@ -11,7 +11,7 @@ public class Main
         labyrinth.toString();
         // returns the maze printed
         System.out.println(labyrinth.toString());
-
+        labyrinth.Rebuild();
     }
 
 }
