@@ -8,9 +8,9 @@ public class Main
 
         Labyrinth labyrinth = new Labyrinth();
 
-        labyrinth.toString();
-
-        labyrinth.Rebuild();
+        labyrinth.printMaze();
+        // returns the maze printed
+        System.out.println(labyrinth.toString());
 
     }
 
