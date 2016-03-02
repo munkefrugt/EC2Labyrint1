@@ -54,7 +54,7 @@ public class Labyrinth
    int MinotaurCount;
 
     int blockCount=0;
-    int randomNumberM;
+    int randomNumberM=0;
 
     // CONSTRUCTOR: generates the layrinth.
     Labyrinth()
