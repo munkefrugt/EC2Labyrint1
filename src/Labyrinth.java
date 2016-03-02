@@ -242,16 +242,33 @@ public class Labyrinth
         String answer = input.nextLine();
         System.out.println("your  answer is: " + answer);
 
-
-        if(answer.equals("yes"))
+        try
         {
-            addMinotaur();
-            generateRandRows();
-            toString();
+            if(answer.equals("yes"))
+            {
+                addMinotaur();
+                generateRandRows();
+                toString();
+                Rebuild();
+            }
+            else if(answer.equals("no"))
+            {
+                System.out.println(" now exit");
+            }
+            else
+            {
+                System.out.println("try again, only  small letters!");
+                Rebuild();
+                System.out.println("no rebuild generation");
+            }
+
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            System.err.println("IndexOutOfBoundsException: " + e.getMessage());
             Rebuild();
         }
-        else
-            System.out.println("no rebuild generation");
+
 
 
     }
