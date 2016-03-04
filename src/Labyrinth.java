@@ -33,23 +33,6 @@ public class Labyrinth
 
 
 
-    ArrayList<String> rowOfRandomStrings = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings1 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings2 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings3 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings4 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings5 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings6 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings7 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings8 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings9 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings10 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings11 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings12 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings13 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings14 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings15 = new ArrayList<String>();
-    ArrayList<String> rowOfRandomStrings16 = new ArrayList<String>();
 
    int MinotaurCount;
 
@@ -59,102 +42,31 @@ public class Labyrinth
     // CONSTRUCTOR: generates the layrinth.
     Labyrinth()
     {
-
-
         // makes the randowm number that is needed for the minuataour to be more than zero
         addMinotaur();
+        // laver 16 arraylister tilføjer til rows making a maze
+        for (int i = 0; i < 16 ; i++)
+        {
+
+
+            ArrayList<String> list = new ArrayList<String>();
+            for (int j = 0; j <24 ; j++)
+            {
+            list.add(makeRandomElement());
+
+            }
+            rowsMakingAMaze.add(list);
+        }
+
+
+
 
 
             // FILLING OF Arraylist rows "rowOfRandomStrings" with randomly created elements
             // should have been made into a loop but i dont know how to generate different referenfenames in for loop.
 
         // (beware of the <= remember the 24 th element is number 23.)
-        generateRandRows();
-
-
-    }
-
-    public void generateRandRows() {
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings1.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings2.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings3.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings4.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings5.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings6.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings7.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings8.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings9.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings10.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings11.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings12.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings13.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings14.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings15.add(makeRandomElement());
-        }
-        for (int i = 0; i <= 24; i++) {
-            rowOfRandomStrings16.add(makeRandomElement());
-        }
-
-        // add each random row to the 2d array
-
-        // add the random rows to the main arraylist. holding 16 places
-        rowsMakingAMaze.add(rowOfRandomStrings);
-        rowsMakingAMaze.add(rowOfRandomStrings1);
-        rowsMakingAMaze.add(rowOfRandomStrings2);
-        rowsMakingAMaze.add(rowOfRandomStrings3);
-        rowsMakingAMaze.add(rowOfRandomStrings4);
-        rowsMakingAMaze.add(rowOfRandomStrings5);
-        rowsMakingAMaze.add(rowOfRandomStrings6);
-        rowsMakingAMaze.add(rowOfRandomStrings7);
-        rowsMakingAMaze.add(rowOfRandomStrings8);
-        rowsMakingAMaze.add(rowOfRandomStrings9);
-        rowsMakingAMaze.add(rowOfRandomStrings10);
-        rowsMakingAMaze.add(rowOfRandomStrings11);
-        rowsMakingAMaze.add(rowOfRandomStrings12);
-        rowsMakingAMaze.add(rowOfRandomStrings13);
-        rowsMakingAMaze.add(rowOfRandomStrings14);
-        rowsMakingAMaze.add(rowOfRandomStrings15);
-        rowsMakingAMaze.add(rowOfRandomStrings16);
-
-
-
-
-
-        System.out.println("generate Labyrinth");
-
-
+        //generateRandRows();
 
 
     }
@@ -201,11 +113,11 @@ public class Labyrinth
     }
 
     // prints the maze
-
+    // never mind this jonas..
     public String toString()
 
     {
-
+        System.out.println();
         // prints 24 width, and 16 rows
         System.out.println("#################################");
         for (int j = 0; j <16 ; j++)
@@ -221,7 +133,7 @@ public class Labyrinth
         }
         System.out.println();
         System.out.println("#################################");
-        return "hi";
+        return "hi jonas";
     }
 
     public void addMinotaur()
@@ -234,7 +146,7 @@ public class Labyrinth
 
     public void Rebuild()
     {
-        System.out.println("rebuild a new one? yes? no? ");
+        System.out.println("rebuild a new one? y? n? ");
 
 
 
@@ -244,14 +156,15 @@ public class Labyrinth
 
         try
         {
-            if(answer.equals("yes"))
+            if(answer.equals("y"))
             {
+
                 addMinotaur();
-                generateRandRows();
+                newMaze();
                 toString();
                 Rebuild();
             }
-            else if(answer.equals("no"))
+            else if(answer.equals("n"))
             {
                 System.out.println(" now exit");
             }
@@ -259,7 +172,7 @@ public class Labyrinth
             {
                 System.out.println("try again, only  small letters!");
                 Rebuild();
-                System.out.println("no rebuild generation");
+                System.out.println("no rebuild generation happened");
             }
 
         }
@@ -272,4 +185,26 @@ public class Labyrinth
 
 
     }
+
+    private void newMaze()
+
+    {
+        blockCount=0;
+        rowsMakingAMaze.clear();
+        for (int i = 0; i < 16 ; i++)
+        {
+
+
+            ArrayList<String> list2 = new ArrayList<String>();
+            for (int j = 0; j <24 ; j++)
+            {
+                list2.add(makeRandomElement());
+
+            }
+            rowsMakingAMaze.add(list2);
+        }
+
+    }
+
+
 }
