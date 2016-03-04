@@ -2,44 +2,23 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by v on 2/26/16.
+ * Created by Martin on 2/26/16.
  */
 public class Labyrinth
 {
     public static Scanner input = new Scanner(System.in);
-    /*
-    The constructor creates a random maze in the following size:
-    width 24, height 16
-    There is no specific requirements for how you create the maze but try to develop as
-    good an algorithm as possible and remember the four rules for good algorithms:
-    It solves the problem correctly
-    It runs (sufficiently) fast
-    It requires (sufficiently) little storage
-    It is simple
-     */
 
 
-
-
-
-    // generate 1 main arraylist to hold the all the 16 rows in the 2d array
+    //  array list to hold the all the 16 rows in the 2d array
 
     ArrayList<ArrayList<String>> rowsMakingAMaze = new ArrayList<ArrayList<String>>();
 
 
-
-
-    // Now generate the randoms row
-
-
-
-
-   int MinotaurCount;
-
+    //blockCount counts how many blocks have been made. here we add ++ to not get more minotaurs. "M"
     int blockCount=0;
-    int randomNumberM=0;
+    int randNumMinotaurLocation =0;
 
-    // CONSTRUCTOR: generates the layrinth.
+    // CONSTRUCTOR: generates the first layrinth.
     Labyrinth()
     {
         // makes the randowm number that is needed for the minuataour to be more than zero
@@ -58,56 +37,50 @@ public class Labyrinth
             rowsMakingAMaze.add(list);
         }
 
-
-
-
-
-            // FILLING OF Arraylist rows "rowOfRandomStrings" with randomly created elements
-            // should have been made into a loop but i dont know how to generate different referenfenames in for loop.
-
-        // (beware of the <= remember the 24 th element is number 23.)
-        //generateRandRows();
-
-
     }
 
 
 
     private String makeRandomElement()
     {
+        // 3 posible returns characters " " , "@". 50% chance and element will be "M".
 
-    if (randomNumberM == blockCount)
-    {
-        blockCount++;
-        return "M";
+            //the value randNumMinotaurLocation can be the value between 0 and 16*24 ( 384 cells in total)
+            // the number is stored as randNumMinotaurLocation, when its time to return the minotaur in the list in the for
+            //loops it will apear just once. smart :)
 
-
-    }
-
-    else
-    {
-        // make 2 possibilities 1 or 0
-        int randomInt = (int)(Math.random() *2 ); // "Math.random()"  is normaly doubles, so it makes is casting it to int "(int)"
-
-        blockCount++;
-
-        if (randomInt == 0)
+        if (randNumMinotaurLocation == blockCount)
         {
-            //System.out.println("0 = blank");
-            return " ";
-        }
+            //blockCount counts how many blocks have been made. here we add ++ to not get more minotaurs. "M"
+            blockCount++;
+            return "M";
 
-        else if (randomInt == 1)
-        {
-            //System.out.println("1 = @");
-            return "@";
-        }
 
+        }
 
         else
-            return"E";// Error
+        {
+            // make 2 possibilities 1 or 0
+            // "Math.random()"  is normaly doubles, so it makes is casting it to int "(int)"
+            int randomInt = (int)(Math.random() *2 );
 
-    }
+            blockCount++;
+
+            if (randomInt == 0)
+            {
+                return " ";
+            }
+
+            else if (randomInt == 1)
+            {
+                return "@";
+            }
+
+
+            else
+                return"E";// Error
+
+        }
 
 
     }
@@ -133,14 +106,14 @@ public class Labyrinth
         }
         System.out.println();
         System.out.println("#################################");
-        return "hi jonas";
+        return "hi jonas,string object bliver en anden gang";
     }
 
     public void addMinotaur()
     {
         // makes a random number that will be used by the makeRandomElement()
-        randomNumberM = (int)(Math.random() *16*24 );
-        System.out.println("randomNumberM  "+randomNumberM);
+        randNumMinotaurLocation = (int)(Math.random() *16*24 );
+        System.out.println("randNumMinotaurLocation  "+ randNumMinotaurLocation);
     }
 
 
@@ -182,15 +155,18 @@ public class Labyrinth
             Rebuild();
         }
 
-
-
     }
 
+    // create a new unique "maze"
     private void newMaze()
 
     {
+        // reset
         blockCount=0;
+        // clear existing rows
         rowsMakingAMaze.clear();
+
+        // make nw rows.
         for (int i = 0; i < 16 ; i++)
         {
 
